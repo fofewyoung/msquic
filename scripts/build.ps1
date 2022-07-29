@@ -422,13 +422,14 @@ function CMake-Generate {
     }
     if ($Platform -eq "android") {
         $env:PATH = "$env:ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin:$env:PATH"
+        $env:ANDROID_NDK_HOME = $env:ANDROID_NDK_ROOT
         switch ($Arch) {
             "x86"   { $Arguments += " -DANDROID_ABI=x86"}
             "x64"   { $Arguments += " -DANDROID_ABI=x86_64" }
             "arm"   { $Arguments += " -DANDROID_ABI=armeabi-v7a" }
             "arm64" { $Arguments += " -DANDROID_ABI=arm64-v8a" }
         }
-        $Arguments += " -DANDROID_PLATFORM=android-29"
+        $Arguments += " -DANDROID_PLATFORM=android-21"
         $NDK = $env:ANDROID_NDK_HOME
         $NdkToolchainFile = "$NDK/build/cmake/android.toolchain.cmake"
         $Arguments += " -DANDROID_NDK=""$NDK"""

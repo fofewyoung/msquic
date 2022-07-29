@@ -235,7 +235,7 @@ else()
         endif()
         set(OPENSSL_CONFIG_CMD ${CMAKE_CURRENT_SOURCE_DIR}/openssl/Configure
             ${OPENSSL_BUILD_TYPE}
-            -D__ANDROID_API__=29)
+            -D__ANDROID_API__=21)
     else()
         set(OPENSSL_CONFIG_CMD ${CMAKE_CURRENT_SOURCE_DIR}/openssl/config
             CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER})
