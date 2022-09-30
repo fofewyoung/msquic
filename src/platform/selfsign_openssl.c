@@ -513,8 +513,12 @@ FindOrCreateTempFiles(
         }
     }
 
+#elif defined(__ANDROID__)
+    UNREFERENCED_PARAMETER(CertFileName);
+    UNREFERENCED_PARAMETER(KeyFileName);
+    UNREFERENCED_PARAMETER(CertFilePath);
+    UNREFERENCED_PARAMETER(KeyFilePath);
 #else
-
     char TempPath[MAX_PATH] = {0};
     char* TempDir = NULL;
 

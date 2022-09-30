@@ -340,7 +340,17 @@ QuicAddrSetToLoopback(
     if (Addr->Ip.sa_family == QUIC_ADDRESS_FAMILY_INET) {
         Addr->Ipv4.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
     } else {
+
+#ifndef __ANDROID__
+    Addr->Ipv6.sin6_addr = in6addr_loopback;
+#else
+    #if __ANDROID_API__ >= __ANDROID_API_N__
         Addr->Ipv6.sin6_addr = in6addr_loopback;
+    #else
+        struct in6_addr lbi = IN6ADDR_LOOPBACK_INIT;
+        Addr->Ipv6.sin6_addr = lbi;
+    #endif
+#endif
     }
 }
 
