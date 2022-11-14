@@ -11,7 +11,7 @@ android: 5+
 
 
 ### BUILD:
-
+```
 pwsh
 
 // linux
@@ -24,3 +24,4 @@ scl enable devtoolset-8 bash
 // android
 ./scripts/build.ps1 -Config Release -Static -Clean -Tls openssl -Arch arm64 -Platform android
 ./scripts/build.ps1 -Config Release -Static -Clean -Tls openssl -Arch arm -Platform android
+```
