@@ -3,14 +3,14 @@ IOS: 9+
 android: 5+
 
 
-CHECK OUT:
+### CHECK OUT:
 
-git clone --depth 1 --branch fix_mobile_2_1_3 https://github.com/fofewyoung/msquic
-git submodule update --init --recursive
+* git clone --depth 1 --branch fix_mobile_2_1_3 https://github.com/fofewyoung/msquic
+* git submodule update --init --recursive
 
 
 
-BUILD:
+### BUILD:
 
 pwsh
 
