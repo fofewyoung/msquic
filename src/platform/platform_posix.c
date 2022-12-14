@@ -93,6 +93,7 @@ CxPlatSystemLoad(
     CxPlatProcessorCount = 1;
 #else
     CxPlatProcessorCount = (uint32_t)sysconf(_SC_NPROCESSORS_ONLN);
+    CxPlatProcessorCount = ((CxPlatProcessorCount > 2) ? (CxPlatProcessorCount / 2) : 1);
 #endif
 
 #ifdef DEBUG
